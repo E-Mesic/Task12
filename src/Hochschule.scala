@@ -19,21 +19,26 @@
   println(s"Room:      ${r.building}, Room Nr: ${r.roomNumber}")
 
   // Printing the tuple (Course, Room) booking understandably
-  println("\n=== Booking Tuple ===")
+  println("\n=== Hochschule Booking Tuple ===")
   val booking = HochschuleRegistry.courseBooking
   println(s"Booked Course: ${booking._1.title}")
   println(s"Booked Room:   ${booking._2.roomNumber}")
   println(s"Pair:          (${booking._1.title}, ${booking._2.roomNumber})")
-      // Create an empty course registry
-    val registry = new CourseRegistry(Map.empty)
 
-    // Enroll students in courses
-    val registry1 = registry.enroll("Amar", Course.Programming)
-    val registry2 = registry1.enroll("Eldar", Course.Programming)
-    val registry3 = registry2.enroll("Amar", Course.Mathematics)
+    // Course Registry
+  val mathematics = Course("Mathematik", 5)
 
-    // Print all students in Programming
-    println(registry3.studentsIn(Course.Programming))
+  val registry = new CourseRegistry(Map.empty)
 
-    // Print students enrolled in both courses
-    println(registry3.inBoth(Course.Programming, Course.Mathematics))
+  val registry1 = registry.enroll(HochschuleRegistry.student, HochschuleRegistry.course)
+  val registry2 = registry1.enroll(HochschuleRegistry.student2, HochschuleRegistry.course)
+  val registry3 = registry2.enroll(HochschuleRegistry.student, mathematics)
+
+  println("\n=== Course Registry ===")
+
+  println("Students in Programmiertechnik:")
+  registry3.studentsIn(HochschuleRegistry.course).foreach(student => println(student.name))
+
+  println("\nStudents in both courses:")
+  registry3.inBoth(HochschuleRegistry.course, mathematics).foreach(student => println(student.name))
+

@@ -1,4 +1,4 @@
-enum Course:
+enum CourseType:
   case Programming
   case Mathematics
   case DigitalTechnology
