@@ -1,7 +1,7 @@
 @main def main(): Unit =
   println("=== Hochschule Data Model ===")
-
-  // Printing individual instances by accessing their specific fields
+  // Hochschule management - Development
+  // Printing individual instances with accessing their specific fields
   val p = HochschuleRegistry.prof
   println(s"Professor: ${p.name} (${p.department})")
   //shortcut for println(s"Student: ${HochschuleRegistry.student.name}")
