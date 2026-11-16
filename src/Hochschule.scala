@@ -1,7 +1,8 @@
 @main def main(): Unit =
   println("=== Hochschule Data Model ===")
-  // Hochschule management - Development
-  // Printing individual instances with accessing their specific fields
+
+  // File Management - Amar
+  // Printing individual instances through accessing their specific fields
   val p = HochschuleRegistry.prof
   println(s"Professor: ${p.name} (${p.department})")
   //shortcut for println(s"Student: ${HochschuleRegistry.student.name}")
@@ -17,7 +18,7 @@
   val r = HochschuleRegistry.room
   println(s"Room:      ${r.building}, Room Nr: ${r.roomNumber}")
 
-  // Printing the tuple (Course, Room) booking CLEANLY
+  // Printing the tuple (Course, Room) booking understandably
   println("\n=== Booking Tuple ===")
   val booking = HochschuleRegistry.courseBooking
   println(s"Booked Course: ${booking._1.title}")
