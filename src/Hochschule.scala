@@ -23,3 +23,16 @@
   println(s"Booked Course: ${booking._1.title}")
   println(s"Booked Room:   ${booking._2.roomNumber}")
   println(s"Pair:          (${booking._1.title}, ${booking._2.roomNumber})")
+      // Create an empty course registry
+    val registry = new CourseRegistry(Map.empty)
+
+    // Enroll students in courses
+    val registry1 = registry.enroll("Amar", Course.Programming)
+    val registry2 = registry1.enroll("Eldar", Course.Programming)
+    val registry3 = registry2.enroll("Amar", Course.Mathematics)
+
+    // Print all students in Programming
+    println(registry3.studentsIn(Course.Programming))
+
+    // Print students enrolled in both courses
+    println(registry3.inBoth(Course.Programming, Course.Mathematics))
