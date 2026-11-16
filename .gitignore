@@ -1,0 +1,24 @@
+# IDE / Editor
+.vscode/
+.metals/
+.bsp/
+.bloop/
+
+# Build / tool output
+target/
+.scala-build/
+.history/
+dist/
+out/
+
+# Ammonite
+.ammonite/
+
+# Compiler output
+*.class
+*.tasty
+
+# Logs & JVM crash dumps
+*.log
+hs_err_pid*
+replay_pid*
