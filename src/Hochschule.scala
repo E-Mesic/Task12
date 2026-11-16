@@ -17,7 +17,7 @@
   val r = HochschuleRegistry.room
   println(s"Room:      ${r.building}, Room Nr: ${r.roomNumber}")
 
-  // Printing the tuple (Course, Room) booking cleanly
+  // Printing the tuple (Course, Room) booking CLEANLY
   println("\n=== Booking Tuple ===")
   val booking = HochschuleRegistry.courseBooking
   println(s"Booked Course: ${booking._1.title}")
