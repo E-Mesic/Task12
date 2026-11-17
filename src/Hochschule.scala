@@ -1,7 +1,8 @@
 @main def main(): Unit =
   println("=== Hochschule Data Model ===")
 
-  // Printing individual instances by accessing their specific fields
+  // File Management - Amar
+  // Printing individual instances through accessing their specific fields
   val p = HochschuleRegistry.prof
   println(s"Professor: ${p.name} (${p.department})")
   //shortcut for println(s"Student: ${HochschuleRegistry.student.name}")
@@ -17,9 +18,27 @@
   val r = HochschuleRegistry.room
   println(s"Room:      ${r.building}, Room Nr: ${r.roomNumber}")
 
-  // Printing the tuple (Course, Room) booking cleanly
-  println("\n=== Booking Tuple ===")
+  // Printing the tuple (Course, Room) booking understandably
+  println("\n=== Hochschule Booking Tuple ===")
   val booking = HochschuleRegistry.courseBooking
   println(s"Booked Course: ${booking._1.title}")
   println(s"Booked Room:   ${booking._2.roomNumber}")
   println(s"Pair:          (${booking._1.title}, ${booking._2.roomNumber})")
+
+    // Course Registry
+  val mathematics = Course("Mathematik", 5)
+
+  val registry = new CourseRegistry(Map.empty)
+
+  val registry1 = registry.enroll(HochschuleRegistry.student, HochschuleRegistry.course)
+  val registry2 = registry1.enroll(HochschuleRegistry.student2, HochschuleRegistry.course)
+  val registry3 = registry2.enroll(HochschuleRegistry.student, mathematics)
+
+  println("\n=== Course Registry ===")
+
+  println("Students in Programmiertechnik:")
+  registry3.studentsIn(HochschuleRegistry.course).foreach(student => println(student.name))
+
+  println("\nStudents in both courses:")
+  registry3.inBoth(HochschuleRegistry.course, mathematics).foreach(student => println(student.name))
+
