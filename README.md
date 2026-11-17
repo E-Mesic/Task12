@@ -1,1 +1,2 @@
-# eldar mMesic HTWG
+# Eldar Mesic HTWG Group Project
+ 
